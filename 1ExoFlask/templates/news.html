@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> <!-- Assurez-vous d'inclure jQuery -->
+</head>
+
+<body>
+    <header>
+        📊Bienvenue📊
+    </header><br>
+    <nav>
+        <ul>
+            <a class="button-link" href="{{ url_for('la_team') }}">Users 👥</a>
+            <a class="button-link" href="#" onclick="getNews()">News 📰</a>
+            <a class="button-link" href="https://fr.tradingview.com/markets/stocks-france/">Graph 📊</a>
+            <a class="button-link" href="#">Crédits 🐱‍👤</a>
+        </ul>
+    </nav>
+    
+
+    <main>
+        <h1>Bienvenue</h1><br>
+        <p>Ceci est la page des NEWS Bourse!</p><br>
+    </main>
+
+    <script>
+        function getNews() {
+            // Remplacez 'YOUR_API_KEY' par votre clé API
+            var apiKey = 'xUc8b0wrH2OSQlG4hp1DB2wNG7HBSDxGbXk2j0OX';
+            var apiUrl = 'https://devapi.ai/docs/api/v1/markets/news?symbol=xUc8b0wrH2OSQlG4hp1DB2wNG7HBSDxGbXk2j0OX&apikey=' + apiKey;
+
+            // Effectuez une requête AJAX pour obtenir les données de l'API
+            $.ajax({
+                url: apiUrl,
+                method: 'GET',
+                success: function (data) {
+                    console.log(data); // Affichez les données dans la console (pour le débogage)
+                    // Ajoutez votre logique pour traiter les données de l'API ici
+                },
+                error: function (error) {
+                    console.error('Erreur lors de la récupération des données de l\'API:', error);
+                    // Ajoutez votre logique pour gérer les erreurs ici
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

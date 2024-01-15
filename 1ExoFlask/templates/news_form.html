@@ -1,0 +1,10 @@
+<!-- news_form.html -->
+{% extends 'layout.html' %}
+
+{% block content %}
+    <form action="{{ url_for('news') }}" method="post">
+        <label for="ticker">Rechercher des informations sur une action :</label>
+        <input type="text" name="ticker" required>
+        <input type="submit" value="Rechercher">
+    </form>
+{% endblock %}

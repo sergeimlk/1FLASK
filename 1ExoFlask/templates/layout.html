@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Accueil{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='statoscop.png') }}" type="image/png">
+</head>
+
+<body>
+    <header class="full-width-banner" style="width: 100%; background-color: #00acee; text-align: center; padding: 10px;">
+        <a class="button-link" href="{{ url_for('home') }}" style="color: #fff;">📊Bienvenue📊</a>
+    </header><br>
+    
+    <nav>
+        <ul>
+            <a class="button-link" href="{{ url_for('utilisateurs_inscrits') }}">👥Users</a>
+            <a class="button-link" href="{{ url_for('draw') }}">🎨DRAW!</a>
+            <a class="button-link" href="{{ url_for('news') }}">📰News</a>
+            <a class="button-link" href="https://fr.tradingview.com/markets/stocks-france/">📊Graph</a>
+            <a class="button-link" href="{{ url_for('credits_page') }}">🐱‍👤Crédits</a>
+        </ul>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+
+</html>

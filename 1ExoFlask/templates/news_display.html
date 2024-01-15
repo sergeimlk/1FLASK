@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Projet Flask</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    
+
+</head>
+<body>
+    <div class="container p-3 my-3 border">
+        <h1>Actualités concernant l'entreprise</h1>
+        <ul>
+            {% for item in news %}
+            <li>
+                <h2>{{ item.title }}</h2>
+                <p>{{ item.description }}</p>
+                <p>Date de publication : {{ item.pubDate }}</p>
+                <a href="{{ item.link }}" target="_blank">Lien vers l'article</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>
+</html>

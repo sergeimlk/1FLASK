@@ -1,0 +1,38 @@
+<!-- templates/utilisateurs-inscrits.html -->
+
+{% extends 'layout.html' %}
+
+{% block title %}
+    Utilisateurs Inscrits sur le site
+{% endblock %}
+
+{% block content %}
+    <h1>Utilisateurs inscrits</h1><br>
+    <div class="table-container">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                    <th>Sexe</th>
+                    <th>Pseudo</th>
+                    <th>Date d'inscription</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user[0] }}</td>
+                        <td>{{ user[1] }}</td>
+                        <td>{{ user[2] }}</td>
+                        <td>{{ user[3] }}</td>
+                        <td>{{ user[4] }}</td> <!-- Assurez-vous que la date d'inscription est dans le cinquième index -->
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <a href="{{ url_for('test_formulaire') }}" class="return-link">Retour au formulaire</a>
+    <a href="{{ url_for('home') }}" class="return-link">Retour à l'accueil</a>
+    
+{% endblock %}

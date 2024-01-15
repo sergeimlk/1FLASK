@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'inscription</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body><br><br>
+    <form method="POST" action="{{ url_for('test_formulaire') }}">
+        <h1>Formulaire d'inscription</h1><br><br>
+        <!-- Vos champs de formulaire ici -->
+        <label for="prenom">Prénom:</label>
+        <input type="text" id="prenom" name="prenom" required autocomplete="given-name"><br>
+
+        <!-- Ajoutez d'autres champs de formulaire ici -->
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" name="nom" required autocomplete="family-name"><br>
+
+        <!-- Nouvelle structure pour les sélecteurs de sexe et de pays -->
+        <div class="select-group">
+            <label for="sexe">Sexe:</label>
+            <select id="sexe" name="sexe" required>
+                <option value="M">Monsieur</option>
+                <option value="F">Madame</option>
+            </select>
+
+            <label for="pays">Pays:</label>
+            <select id="pays" name="pays" required>
+                <option value="FR">🇫🇷 France</option>
+                <option value="US">🇺🇸 United States</option>
+                <option value="CA">🇨🇦 Canada</option>
+                <!-- Ajoutez d'autres pays selon vos besoins -->
+            </select>
+        </div><br>
+
+        <label for="pseudo">Pseudo:</label>
+        <input type="text" id="pseudo" name="pseudo" required autocomplete="username"><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required autocomplete="email"><br>
+
+        <label for="password">Mot de passe:</label>
+        <input type="password" id="password" name="password" required autocomplete="new-password"><br>
+
+        <!-- Ajout d'un bouton de soumission -->
+        <button type="submit"></button>
+    </form>
+
+    <!-- Ajout du message d'erreur -->
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+
+    <!-- Ajout des boutons centrés -->
+    <a class="button-link centered-link" href="{{ url_for('login') }}">Déjà inscrit? Connectez-vous ici</a>
+    <a class="button-link centered-link" href="{{ url_for('utilisateurs_inscrits') }}">Voir la liste des utilisateurs inscrits ici</a>
+
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+/* Reset CSS */
+body, h1, h2, h3, p, ul, ol, li, form, label, input, button {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f8fa; /* Couleur de fond Twitter */
+    color: #14171a; /* Couleur du texte Twitter */
+}
+
+h1 {
+    color: #1da1f2; /* Couleur du texte pour le titre */
+    text-align: center; /* Centrer le titre */
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #ffffff; /* Couleur de fond du formulaire Twitter */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #1da1f2; /* Couleur du texte des étiquettes */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #1da1f2; /* Couleur de la bordure des champs */
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #1da1f2; /* Couleur du fond du bouton */
+    color: #ffffff; /* Couleur du texte du bouton */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px; /* Augmenté le border-radius à 20px */
+    cursor: pointer;
+    display: block; /* Centrer le bouton */
+    margin: 0 auto; /* Centrer le bouton */
+}
+
+button:hover {
+    background-color: #0c84b9; /* Couleur de fond du bouton au survol */
+}
+
+p {
+    color: #657786; /* Couleur du texte des paragraphes */
+}
+
+
+body {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #00acee;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 0px;
+}
+
+main {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+form input[type="submit"] {
+    background-color: #00acee;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 20px; /* Augmenté le border-radius à 20px */
+}
+
+form input[type="submit"]:hover {
+    background-color: #007bb5;
+    border-radius: 20px; /* Augmenté le border-radius à 20px */
+}
+
+a {
+    color: #00acee;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+nav {
+    text-align: center; /* Centre les éléments enfants horizontalement */
+}
+
+.button-link,
+.button-google {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px; /* Augmenté le border-radius à 20px */
+    transition: background-color 0.3s ease;
+    margin-right: 10px; /* Ajout de marges entre les boutons */
+}
+
+.button-link {
+    background-color: #00acee;
+}
+
+.button-link:hover {
+    background-color: #007bb5;
+}
+
+.button-google {
+    background-color: #4285f4;
+}
+
+.button-google:hover {
+    background-color: #3c78d8;
+}
+
+.centered-link {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* static/style.css */
+
+.table-container {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.styled-table th {
+    background-color: #00acee;
+}
+
+/* DRAW */
+a.return-link {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px; /* Augmenté le border-radius à 20px */
+    transition: background-color 0.3s ease;
+    margin-right: 10px; /* Ajout de marges entre les boutons */
+}
+
+a.return-link:hover {
+    background-color: #00acee;
+    border-radius: 20px; /* Augmenté le border-radius à 20px */
+}

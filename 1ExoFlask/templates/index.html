@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Page d'Accueil
+{% endblock %}
+
+{% block content %}
+    <body style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+
+        <!-- Lecteur audio -->
+        <audio autoplay volume="0.1" style="width: 0; height: 0; overflow: hidden;">
+            <source src="https://www.youtube.com/embed/6-9JNs12Lto" type="audio/mp3">
+            Votre navigateur ne supporte pas l'élément audio.
+        </audio>
+
+        <h1>📈📉💹💰💲🏦📊📅</h1><br>
+        <p>Formulaire pour recevoir des news de vos Stocks et Cryptos préférés!</p><br>
+
+        <!-- Barre de chargement -->
+        <div id="loading-bar" style="width: 100%; background-color: #00acee; height: 20px; border-radius: 4px; margin-bottom: 20px; position: relative;">
+            <div id="progress" style="height: 100%; width: 0; background-color: #8CC84B; border-radius: 4px; position: absolute; text-align: center; line-height: 20px; color: #fff;"></div>
+        </div>
+
+        <script>
+            // Code JavaScript pour mettre à jour la barre de chargement
+            let loadingBar = document.getElementById('loading-bar');
+            let progressBar = document.getElementById('progress');
+
+            // Fonction pour mettre à jour la barre de chargement
+            function updateProgressBar(percentage) {
+                progressBar.style.width = percentage + '%';
+                progressBar.innerText = percentage + '% terminé';
+            }
+
+            // Simulation du chargement jusqu'à 60%
+            let currentProgress = 0;
+            let interval = setInterval(function () {
+                updateProgressBar(currentProgress);
+                currentProgress += 1;
+
+                if (currentProgress > 60) {
+                    clearInterval(interval); // Arrête la simulation à 60%
+                }
+            }, 50);
+        </script>
+
+        <!-- Formulaire d'inscription -->
+        <form method="POST" action="{{ url_for('test_formulaire') }}" style="max-width: 400px; margin: 0 auto;">
+            <h1>Formulaire d'inscription</h1><br><br>
+            <!-- Vos champs de formulaire ici -->
+            <label for="prenom">Prénom:</label>
+            <input type="text" id="prenom" name="prenom" required autocomplete="given-name"><br>
+
+            <label for="nom">Nom:</label>
+            <input type="text" id="nom" name="nom" required autocomplete="family-name"><br>
+
+            <!-- Nouvelle structure pour les sélecteurs de sexe et de pays -->
+            <div class="select-group">
+                <label for="sexe">Sexe:</label>
+                <select id="sexe" name="sexe" required style="background-color: #00acee; color: #fff; border-radius: 4px; padding: 10px; width: 100%;">
+                    <option value="M">Monsieur</option>
+                    <option value="F">Madame</option>
+                </select>
+
+                <label for="pays">Pays:</label>
+                <select id="pays" name="pays" required style="background-color: #00acee; color: #fff; border-radius: 4px; padding: 10px; width: 100%;">
+                    <option value="FR">🇫🇷 France</option>
+                    <option value="US">🇺🇸 United States</option>
+                    <option value="CA">🇨🇦 Canada</option>
+                    <!-- Ajoutez d'autres pays selon vos besoins -->
+                </select>
+            </div><br>
+
+            <label for="pseudo">Pseudo:</label>
+            <input type="text" id="pseudo" name="pseudo" required autocomplete="username"><br>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required autocomplete="email"><br>
+
+            <label for="password">Mot de passe:</label>
+            <input type="password" id="password" name="password" required autocomplete="new-password"><br>
+
+            <!-- Ajout d'un bouton de soumission -->
+            <button type="submit" style="background-color: #007BFF; color: #fff; border-radius: 4px; padding: 10px; width: 100%;">S'inscrire</button>
+        </form>
+    </body>
+</html>
+{% endblock %}
